@@ -63,8 +63,8 @@ lua_load ~/.config/conky/conky.lua
 TEXT
 ${execi 900 ~/.config/conky/conky_scripts get_weather_data}\
 # Sunrise & Sunset
-${image ~/.config/conky-weather/icons/sunrise.png -p 0,0 -s 16x16}\
-${image ~/.config/conky-weather/icons/sunset.png -p 304,0 -s 16x16}\
+${image ~/.config/conky/conky-weather/icons/sunrise.png -p 0,0 -s 16x16}\
+${image ~/.config/conky/conky-weather/icons/sunset.png -p 304,0 -s 16x16}\
 ${color1}${goto 25}${execi 900 ~/.config/conky/conky_scripts get_sunrise_time}${font}${color}\
 ${color1}${alignr 20}${execi 900 ~/.config/conky/conky_scripts get_sunset_time}${font}${color}\
 
@@ -80,9 +80,9 @@ ${color1}${alignr 60}${voffset 7}${execi 300 grep "yweather:atmosphere" ~/.cache
 ${color1}${alignr 60}${voffset 7}${execi 300 grep "yweather:wind" ~/.cache/weather.xml | grep -o "speed=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"} ${execi 300 grep "yweather:units" ~/.cache/weather.xml | grep -o "speed=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}${color}
 \
 # pressure, humidity, wind speed #
-${image ~/.config/conky-weather/assets/Zukitwo-v2/God-Mode/pressure.png -p 270,96 -s 16x16}\
-${image ~/.config/conky-weather/assets/Zukitwo-v2/God-Mode/humidity.png -p 270,117 -s 16x16}\
-${image ~/.config/conky-weather/assets/Zukitwo-v2/God-Mode/wind-2.png -p 270,139 -s 16x16}\
+${image ~/.config/conky/conky-weather/assets/Zukitwo-v2/God-Mode/pressure.png -p 270,96 -s 16x16}\
+${image ~/.config/conky/conky-weather/assets/Zukitwo-v2/God-Mode/humidity.png -p 270,117 -s 16x16}\
+${image ~/.config/conky/conky-weather/assets/Zukitwo-v2/God-Mode/wind-2.png -p 270,139 -s 16x16}\
 
 # Writen out days of the week #
 ${color2}${hr}${color}
@@ -92,10 +92,10 @@ ${color3}${voffset -15}${alignc -36}${execi 300 grep "yweather:forecast" ~/.cach
 ${color3}${voffset -15}${alignc -112}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "day=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==4' | tr '[a-z]' '[A-Z]'}${color}
 \
 # DAILY WEATHER IMAGES
-${execi 300 cp -f ~/.config/conky-weather/icons/weather-icons-light3/$(grep "yweather:forecast" ~/.cache/weather.xml | grep -o "code=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==1').png ~/.cache/weather-1.png}${image ~/.cache/weather-1.png -p 26,211 -s 32x32}\
-${execi 300 cp -f ~/.config/conky-weather/icons/weather-icons-light3/$(grep "yweather:forecast" ~/.cache/weather.xml | grep -o "code=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==2').png ~/.cache/weather-2.png}${image ~/.cache/weather-2.png -p 104,211 -s 32x32}\
-${execi 300 cp -f ~/.config/conky-weather/icons/weather-icons-light3/$(grep "yweather:forecast" ~/.cache/weather.xml | grep -o "code=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==3').png ~/.cache/weather-3.png}${image ~/.cache/weather-3.png -p 180,211 -s 32x32}\
-${execi 300 cp -f ~/.config/conky-weather/icons/weather-icons-light3/$(grep "yweather:forecast" ~/.cache/weather.xml | grep -o "code=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==3').png ~/.cache/weather-4.png}${image ~/.cache/weather-4.png -p 255,211 -s 32x32}${font}${voffset -120}\
+${execi 300 cp -f ~/.config/conky/conky-weather/icons/weather-icons-light3/$(grep "yweather:forecast" ~/.cache/weather.xml | grep -o "code=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==1').png ~/.cache/weather-1.png}${image ~/.cache/weather-1.png -p 26,211 -s 32x32}\
+${execi 300 cp -f ~/.config/conky/conky-weather/icons/weather-icons-light3/$(grep "yweather:forecast" ~/.cache/weather.xml | grep -o "code=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==2').png ~/.cache/weather-2.png}${image ~/.cache/weather-2.png -p 104,211 -s 32x32}\
+${execi 300 cp -f ~/.config/conky/conky-weather/icons/weather-icons-light3/$(grep "yweather:forecast" ~/.cache/weather.xml | grep -o "code=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==3').png ~/.cache/weather-3.png}${image ~/.cache/weather-3.png -p 180,211 -s 32x32}\
+${execi 300 cp -f ~/.config/conky/conky-weather/icons/weather-icons-light3/$(grep "yweather:forecast" ~/.cache/weather.xml | grep -o "code=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==3').png ~/.cache/weather-4.png}${image ~/.cache/weather-4.png -p 255,211 -s 32x32}${font}${voffset -120}\
 \
 # The temperatures of the forecast #
 ${color6}${voffset 169}${alignc 117}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "low=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==1'}°/${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "high=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==1'}°${color}
