@@ -1,70 +1,66 @@
-conky.config = {
-	background = true,     -- forked to background
+background yes
 
-    font = 'DejaVu Sans Mono:size=9',
-	use_xft = true,
-	xftalpha = 0.8,
-	override_utf8_locale = true,
-	short_units = true,    -- kiB->k, GiB->G, etc...
+font 7x13
+use_xft yes
+xftfont DejaVu Sans Mono:size=9
+xftalpha 0.8
+override_utf8_locale yes
+short_units
 
-	update_interval = 2.0,
+update_interval 2.0
 
-	own_window = true,
-	own_window_class = 'Conky',
-	own_window_type = 'override',      -- normal, desktop, dock, panel, override (default: normal
-	own_window_transparent = false,
-	own_window_argb_visual = true,
-	own_window_argb_value = 100,        -- 0-255 oppacity
-	own_window_colour = '#000000',
-	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+own_window yes
+own_window_class Conky
+own_window_type override
+own_window_transparent no
+own_window_argb_visual yes
+own_window_argb_value 85
+own_window_colour 000000
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 
-	double_buffer = true,
-	no_buffers = true,
-    imlib_cache_size = 10,
-    minimum_width = 320,
-    minimum_height = 5,
-    maximum_width = 320,
-    max_text_width = 0,
+double_buffer yes
+minimum_size 320 5
+maximum_width 320
+max_text_width 0
 
-    draw_shades = true,
-    draw_outline = false,
-    draw_borders = false,
-    draw_graph_borders = true,
-    border_inner_margin = 0,
-    border_outer_margin = 0,
-    border_width = 5,
+draw_shades yes
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+border_inner_margin 0
+border_outer_margin 0
+border_width 5
 
-    default_color = 'white',
-    default_shade_color = 'black',
-    default_outline_color = 'black',
-    color0 = 'PaleGreen',
-    color1 = 'DarkSeaGreen',
-    color2 = 'SeaGreen',
-    color3 = 'GreenYellow',
-    color4 = 'red',
-    color5 = 'white',
-    color6 = 'DarkOliveGreen3',
-    color7 = 'DarkOliveGreen2',
-    color8 = 'white',
-    color9 = 'ForestGreen',
-    default_bar_width = 115, default_bar_height = 10,
+default_color white
+default_shade_color black
+default_outline_color black
+color0 PaleGreen
+color1 DarkSeaGreen
+color2 SeaGreen
+color3 GreenYellow
+color4 red
+color5 white
+color6 DarkOliveGreen3
+color7 DarkOliveGreen2
+color8 white
+color9 ForestGreen
+default_bar_size 115 10
 
-    alignment = 'top_right',
-    gap_x = 50,
-    gap_y = 50,
+alignment top_right
+gap_x 50
+gap_y 50
 
-	uppercase = false,
-	cpu_avg_samples = 2,
-	net_avg_samples = 2,
-	use_spacer = 'none',
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+net_avg_samples 2
+use_spacer none
 
-	top_name_width = 18,
-	top_cpu_separate = false,
+top_name_width 18
+top_cpu_separate false
 
-	lua_load = '~/.config/conky/conky.lua',
-};
-
-conky.text = [[
+lua_load ~/.config/conky/conky.lua
+TEXT
 ${execi 900 ~/.config/conky/conky_scripts get_weather_data}\
 # Sunrise & Sunset
 ${image ~/.config/conky-weather/icons/sunrise.png -p 0,0 -s 16x16}\
@@ -137,4 +133,3 @@ ${color0}GPU:${goto 45}${color8}${hwmon 0 temp 1}°C${color0}${goto 100}Upd:${go
 \
 ${color2}${hr}${color}
 ${color0}battery: ${color8}${apcupsd_charge} ${color lightblue}${battery_bar}
-]];
