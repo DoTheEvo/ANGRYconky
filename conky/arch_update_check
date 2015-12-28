@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# create a symbolic link in cron.hourly to get executed periodicly
+# sudo ln -s ~/.config/conky/arch_update_check /etc/cron.hourly
+
+checkupdates | wc -l > /home/ja/.config/conky/arch_updates
+
