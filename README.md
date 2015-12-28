@@ -4,7 +4,9 @@ Conky derived from [Harmattan](http://zagortenay333.deviantart.com/art/Conky-Har
 ![picture how it looks](http://i.imgur.com/tdyrKAp.jpg)
 
 For conky version 1.10+
+
 everything is kept in ~/.config/conky
+
 some lua, some python3
 
 #### installation:
