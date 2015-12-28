@@ -1,13 +1,14 @@
 # ANGRYconky
 Conky derived from [Harmattan](http://zagortenay333.deviantart.com/art/Conky-Harmattan-426662366)
 
-![lite version png](http://i.imgur.com/fRsoL2g.jpg)
+![picture how it looks](http://i.imgur.com/tdyrKAp.jpg)
 
-For conky version 1.10+ with the new syntax and lua integration
+For conky version 1.10+
 everything is kept in ~/.config/conky
-python3 is used for calendar, lua for scripts and theres also a bash script
+some lua, some python3
 
 #### installation:
 * copy conky folder in to ~/.config/
-* make conky_bash_scripts executable `chmod +x conky_scripts`
-* run conky on startup with `conky -c ~/.config/conky/conkyrc_main`
+* make python scrips executable: `chmod +x python_conky_scripts.py`
+* change yahoo weather ID number in the main rc file
+* run conky on startup with command: `conky -c ~/.config/conky/conkyrc_main`
