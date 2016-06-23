@@ -1,4 +1,7 @@
 # ANGRYconky
+
+*weather not working at the moment, didnt bother to fix yet as yahoo api went off*
+
 Conky derived from [Harmattan](http://zagortenay333.deviantart.com/art/Conky-Harmattan-426662366)
 
 ![picture how it looks](http://i.imgur.com/4t19xUE.jpg)
